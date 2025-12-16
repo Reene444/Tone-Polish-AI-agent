@@ -205,3 +205,4 @@ This prompt instructs the AI to rewrite the text while maintaining professionali
 
 ## Demo:
 
+<img width="636" height="500" alt="image" src="https://github.com/user-attachments/assets/11b6c6df-7606-49cc-8f54-54d11193a722" />
