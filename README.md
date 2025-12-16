@@ -32,16 +32,7 @@ A simple internal tool that helps support agents refine their messages to be pro
    The backend will start on `http://localhost:8080`
 
 3. (Optional) To use AI API instead of mock:
-   - **Recommended: Groq API** (free and fast):
-     ```bash
-     export GROQ_API_KEY=your-groq-api-key-here
-     ```
-     Get Groq API Key: https://console.groq.com/
-   
-   - Or use OpenAI API:
-     ```bash
-     export OPENAI_API_KEY=your-openai-api-key-here
-     ```
+ configure api key in the application.properties
 
 ### Frontend Setup
 
@@ -120,7 +111,7 @@ I used AI assistance (Claude) extensively to speed up development. Here's a deta
 The system sends a two-message structure to AI API:
 - **System Message**: "You are a professional communication assistant. Rewrite the following text to be professional, empathetic, and concise while preserving the original meaning and intent."
 - **User Message**: The raw input text from the user
-
+- the prompt could be configured with some flexibility 
 This prompt instructs the AI to rewrite the text while maintaining professionalism, empathy, and conciseness.
 
 ### 4. Retry Mechanism (Enterprise Standard)
@@ -144,18 +135,6 @@ This prompt instructs the AI to rewrite the text while maintaining professionali
 > "Create a clean CSS layout with two-column grid for input and output sections. Make it responsive for mobile devices. Use modern styling with proper spacing and hover effects."
 
 **Result:** Created responsive CSS Grid layout with professional styling.
-
-### 7. Unit Tests
-**Prompt Used:**
-> "Write JUnit 5 unit tests for RefineService. Test cases: empty input, normal input, apologetic input, and meaning preservation. Use MockAIClient for testing."
-
-**Result:** Created comprehensive test suite with 4 test cases covering different scenarios.
-
-### 8. Configuration Management
-**Prompt Used:**
-> "Create a Spring configuration class to manage AIClient beans. Use @ConditionalOnProperty to conditionally create GroqAIClient only when API key is provided. Make MockAIClient the @Primary bean."
-
-**Result:** Created `AIClientConfig` with proper bean management and conditional creation.
 
 ## Time Log
 
@@ -224,12 +203,5 @@ This prompt instructs the AI to rewrite the text while maintaining professionali
   - Error classification logging
 - ✅ CORS configuration for frontend-backend communication
 
-## Notes
-
-- The application uses a mock service by default if no AI API key is provided
-- **Recommended: Groq API**: Free, fast, supports multiple models (llama-3.1-8b-instant, mixtral-8x7b-32768, etc.)
-- Get Groq API Key: https://console.groq.com/ (free registration)
-- The mock service provides basic text transformation to demonstrate functionality
-- Error handling covers API failures and empty input scenarios
-- The UI is responsive and works on mobile devices
+## Demo:
 
